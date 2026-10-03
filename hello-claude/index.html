@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>나의 첫 AI 작업실 · 모임 안내</title>
+  <meta name="description" content="AI 도구로 처음 무언가 만들어 보고 싶은 사람을 위한 모임, 나의 첫 AI 작업실 안내 페이지입니다.">
+  <link rel="icon" href="data:,">
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f7f5f0;
+      --surface: #ffffff;
+      --text: #1f2328;
+      --muted: #5b616b;
+      --accent: #2f6f5e;
+      --accent-soft: #e4f0eb;
+      --on-accent: #ffffff;
+      --border: #e3dfd6;
+      --notice-bg: #fff4d6;
+      --notice-text: #6b4800;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #16181c;
+        --surface: #1f2228;
+        --text: #e8e6e1;
+        --muted: #a3a8b0;
+        --accent: #7cc4ad;
+        --accent-soft: #1d3a32;
+        --on-accent: #10231d;
+        --border: #30343b;
+        --notice-bg: #3a2f12;
+        --notice-text: #f2c76b;
+      }
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif;
+      line-height: 1.7;
+      word-break: keep-all;
+      overflow-wrap: anywhere;
+    }
+
+    .page {
+      max-width: 44rem;
+      margin: 0 auto;
+      padding: 3rem 1rem 2.5rem;
+    }
+
+    @media (min-width: 40rem) {
+      .page {
+        padding: 4.5rem 1.5rem 3rem;
+      }
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin: 0 0 0.75rem;
+      padding: 0.2rem 0.75rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.875rem;
+      font-weight: 700;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 7vw, 3rem);
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+    }
+
+    .lead {
+      margin: 0.75rem 0 0;
+      color: var(--muted);
+      font-size: 1.0625rem;
+    }
+
+    section {
+      margin-top: 2.5rem;
+    }
+
+    h2 {
+      margin: 0 0 1rem;
+      font-size: 1.25rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+      gap: 0.75rem;
+      margin: 0;
+    }
+
+    .card,
+    .steps li {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+    }
+
+    .card {
+      padding: 1.1rem 1.25rem;
+    }
+
+    .card dt {
+      margin-bottom: 0.25rem;
+      color: var(--accent);
+      font-size: 0.875rem;
+      font-weight: 700;
+    }
+
+    .card dd {
+      margin: 0;
+      font-size: 1.0625rem;
+      font-weight: 600;
+    }
+
+    .card ul {
+      margin: 0;
+      padding-left: 1.2rem;
+    }
+
+    .steps {
+      display: grid;
+      gap: 0.75rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: step;
+    }
+
+    .steps li {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.9rem 1.25rem;
+      counter-increment: step;
+    }
+
+    .steps li::before {
+      content: counter(step);
+      flex: none;
+      display: grid;
+      place-items: center;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      background: var(--accent);
+      color: var(--on-accent);
+      font-weight: 700;
+    }
+
+    .step-name {
+      flex: 1;
+      font-weight: 600;
+    }
+
+    .step-time {
+      color: var(--muted);
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+
+    .notice {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1.1rem 1.25rem;
+      border-radius: 1rem;
+      background: var(--notice-bg);
+      color: var(--notice-text);
+    }
+
+    .notice p {
+      margin: 0;
+      font-weight: 600;
+    }
+
+    .badge {
+      padding: 0.1rem 0.65rem;
+      border: 1px solid currentColor;
+      border-radius: 999px;
+      font-size: 0.875rem;
+      font-weight: 700;
+    }
+
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.875rem;
+    }
+
+    footer p {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <p class="eyebrow">모임 안내</p>
+      <h1>나의 첫 AI 작업실</h1>
+      <p class="lead">AI 도구로 처음 무언가 만들어 보고 싶은 사람을 위한 모임입니다.</p>
+    </header>
+
+    <main>
+      <section aria-labelledby="info-title">
+        <h2 id="info-title">모임 정보</h2>
+        <dl class="cards">
+          <div class="card">
+            <dt>일시</dt>
+            <dd><time datetime="2026-10-17">2026년 10월 17일 토요일</time><br>오후 3시~5시</dd>
+          </div>
+          <div class="card">
+            <dt>장소</dt>
+            <dd>가상 공간 '작은 작업실'</dd>
+          </div>
+          <div class="card">
+            <dt>대상</dt>
+            <dd>AI 도구로 처음 무언가 만들어 보고 싶은 사람</dd>
+          </div>
+          <div class="card">
+            <dt>준비물</dt>
+            <dd>
+              <ul>
+                <li>노트북</li>
+                <li>해보고 싶은 작은 일 하나</li>
+              </ul>
+            </dd>
+          </div>
+        </dl>
+      </section>
+
+      <section aria-labelledby="steps-title">
+        <h2 id="steps-title">진행 순서</h2>
+        <ol class="steps">
+          <li><span class="step-name">서로 소개하기</span><span class="step-time">20분</span></li>
+          <li><span class="step-name">각자 만들기</span><span class="step-time">70분</span></li>
+          <li><span class="step-name">결과 나누기</span><span class="step-time">30분</span></li>
+        </ol>
+      </section>
+
+      <section aria-labelledby="apply-title">
+        <h2 id="apply-title">신청 안내</h2>
+        <div class="notice">
+          <span class="badge">준비 중</span>
+          <p>신청 기능은 준비 중입니다.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>이 페이지의 모임과 장소는 헬로우 휴먼 입문 가이드 실습을 위해 만든 가상 자료입니다. 실제 참가자를 모집하거나 신청 정보를 수집하지 않습니다.</p>
+    </footer>
+  </div>
+</body>
+</html>
